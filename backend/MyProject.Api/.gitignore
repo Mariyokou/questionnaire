@@ -1,0 +1,47 @@
+## Ignore build output
+bin/
+obj/
+
+## User-specific files
+# Windows Installer files
+Thumbs.db
+
+# Windows Installer files
+Desktop.ini
+
+# User-specific files
+.idea/
+.vscode/
+
+## ASP.NET Core files
+# Ignore Visual Studio for Mac configuration folder
+.vscode/
+
+# User-specific files created by Visual Studio
+.vs/
+.vs2019/
+.vs2017/
+
+# Rider IDE
+.idea/
+
+## Dependency directories
+# .NET Core dependencies
+.nuget/
+
+## ASP.NET Core / Visual Studio configuration
+# Local Development settings
+appsettings.Development.json
+
+# Ignore test results
+# NUnit
+TestResults/
+
+# User-specific IDE files
+.vscode/
+
+# Logs
+*.log
+
+# Windows Installer
+Thumbs.db

@@ -1,7 +1,7 @@
 # BACKEND
 
 Navigate to the Backend Folder:
-### `cd MyProject.Api`
+### `cd backend/MyProject.Api`
 
 Run the following command to restore the project dependencies:
 ### `dotnet restore`

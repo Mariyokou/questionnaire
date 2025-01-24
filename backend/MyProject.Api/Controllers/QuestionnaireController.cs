@@ -8,10 +8,12 @@ namespace MyProject.Api.Controllers
     public class QuestionnaireController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IScoreCalculatorService _scoreCalculatorService;
 
-        public QuestionnaireController(AppDbContext context)
+        public QuestionnaireController(AppDbContext context, IScoreCalculatorService scoreCalculatorService)
         {
             _context = context;
+            _scoreCalculatorService = scoreCalculatorService;
         }
 
         [HttpGet]
@@ -43,22 +45,7 @@ namespace MyProject.Api.Controllers
                     return NotFound(new { message = $"Question with Id {answer.Key} not found." });
                 }
 
-                if (question.Type == QuestionType.Text || question.Type == QuestionType.SingleChoice)
-                {
-                    var isCorrect = answer.Value.SequenceEqual(question.CorrectAnswers);
-                    
-                    if (isCorrect)
-                    {
-                        totalScore += 100;
-                    }
-                } else if (question.Type == QuestionType.MultipleChoice)
-                {
-                    var isCorrect = answer.Value.SequenceEqual(question.CorrectAnswers);
-                    int goodAnswersCount = question.CorrectAnswers.Count;
-                    int correctlyCheckedCount = answer.Value.Intersect(question.CorrectAnswers).Count();
-                    
-                    totalScore += (100/goodAnswersCount)*correctlyCheckedCount;
-                }
+                totalScore += _scoreCalculatorService.CalculateQuestionScore(question, answer.Value);
             }
 
             var highScore = new HighScore

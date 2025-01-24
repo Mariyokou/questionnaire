@@ -43,11 +43,11 @@ const ScorePage = () => {
                   let medalIcon = null;
 
                   if (index === 0) {
-                    medalIcon = <FaMedal className="text-yellow-500" />;
+                    medalIcon = <FaMedal className="text-[#FFD700]" />;
                   } else if (index === 1) {
-                    medalIcon = <FaMedal className="text-gray-400" />;
+                    medalIcon = <FaMedal className="text-[#C0C0C0]" />;
                   } else if (index === 2) {
-                    medalIcon = <FaMedal className="text-orange-500" />;
+                    medalIcon = <FaMedal className="text-[#CE8946]" />;
                   }
 
                   return (
