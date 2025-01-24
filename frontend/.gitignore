@@ -2,7 +2,7 @@
 node_modules/
 
 # Build output
-public/
+build/
 
 # .env files containing sensitive information
 .env

@@ -21,7 +21,7 @@ public class ScoreCalculatorService : IScoreCalculatorService
         {
             int goodAnswersCount = question.CorrectAnswers.Count;
             int correctlyCheckedCount = answer.Intersect(question.CorrectAnswers).Count();
-            totalScore += (100 / goodAnswersCount) * correctlyCheckedCount;
+            totalScore += (int)Math.Ceiling((100.0 / goodAnswersCount) * correctlyCheckedCount);
         }
 
         return totalScore;

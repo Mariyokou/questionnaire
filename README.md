@@ -35,3 +35,14 @@ Or, if you're using Yarn:
 `yarn start`
 
 The frontend will be available at http://localhost:3000.
+
+
+
+
+# TO RUN TESTS
+Navigate to the Backend Test Folder:
+### `cd backend/MyProject.Tests`
+
+
+Start the backend application:
+### `dotnet test`
